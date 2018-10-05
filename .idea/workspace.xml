@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c70e8fcd-98c9-45bd-97d7-a345137cb52a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Ex02.1/Exercise1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex02.1/Exercise1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex02.1/FragmentShader.glsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex02.1/VertexShader.glsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex02.1/gl-matrix.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex02.1/shaderUtils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ex02.1/webgl-debug.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercise1.js" beforeDir="false" afterPath="$PROJECT_DIR$/Ex01/Exercise1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FragmentShader.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/Ex01/FragmentShader.glsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Ex01/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VertexShader.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/Ex01/VertexShader.glsl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gl-matrix.js" beforeDir="false" afterPath="$PROJECT_DIR$/Ex01/gl-matrix.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shaderUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/Ex01/shaderUtils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webgl-debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/Ex01/webgl-debug.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,40 +24,49 @@
     <session id="157678465">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="glsl" value="137" />
-          <entry key="js" value="1289" />
+          <entry key="glsl" value="286" />
+          <entry key="js" value="1544" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="GLSL shader file" value="137" />
-          <entry key="JavaScript" value="1289" />
+          <entry key="GLSL shader file" value="286" />
+          <entry key="JavaScript" value="1544" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="glsl" value="2" />
+          <entry key="js" value="1" />
+          <entry key="md" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="GLSL shader file" value="2" />
+          <entry key="JavaScript" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ex01/Exercise1.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Ex01/Exercise1.js">
+        <entry file="file://$PROJECT_DIR$/Ex02.1/Exercise1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="39" column="94" lean-forward="true" selection-start-line="39" selection-start-column="94" selection-end-line="39" selection-end-column="94" />
+            <state relative-caret-position="630">
+              <caret line="88" column="32" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -67,46 +75,17 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ex01/FragmentShader.glsl">
+        <entry file="file://$PROJECT_DIR$/Ex02.1/FragmentShader.glsl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+            <state relative-caret-position="68">
+              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ex01/VertexShader.glsl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="31" lean-forward="true" selection-start-column="31" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ex01/gl-matrix.js">
+        <entry file="file://$PROJECT_DIR$/Ex02.1/VertexShader.glsl">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ex01/shaderUtils.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ex01/webgl-debug.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1411">
-              <caret line="4" column="67" lean-forward="true" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
-            </state>
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -126,9 +105,11 @@
         <option value="$PROJECT_DIR$/FragmentShader.glsl" />
         <option value="$PROJECT_DIR$/Exercise1.html" />
         <option value="$PROJECT_DIR$/Exercise1.js" />
-        <option value="$PROJECT_DIR$/Ex01/FragmentShader.glsl" />
         <option value="$PROJECT_DIR$/Ex01/VertexShader.glsl" />
+        <option value="$PROJECT_DIR$/Ex01/FragmentShader.glsl" />
         <option value="$PROJECT_DIR$/Ex01/Exercise1.js" />
+        <option value="$PROJECT_DIR$/Ex02.1/FragmentShader.glsl" />
+        <option value="$PROJECT_DIR$/Ex02.1/Exercise1.js" />
       </list>
     </option>
   </component>
@@ -138,11 +119,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1928" />
-    <option name="y" value="-136" />
-    <option name="width" value="1936" />
-    <option name="height" value="1176" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-11" />
+    <option name="width" value="1301" />
+    <option name="height" value="1391" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -160,7 +140,7 @@
             <path>
               <item name="ComputerGraphics" type="b2602c69:ProjectViewProjectNode" />
               <item name="ComputerGraphics" type="462c0819:PsiDirectoryNode" />
-              <item name="Ex01" type="462c0819:PsiDirectoryNode" />
+              <item name="Ex02.1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -176,6 +156,10 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Larissa\Documents\GitHub\ComputerGraphics\Ex02.1" />
+      <recent name="C:\Users\Larissa\Documents\GitHub\ComputerGraphics" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Larissa\Documents\GitHub\ComputerGraphics\Ex01" />
     </key>
@@ -192,7 +176,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Exercise1.html (2)">
+  <component name="RunManager" selected="JavaScript Debug.Exercise1.html (3)">
     <configuration default="true" type="BashConfigurationType" factoryName="Bash">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="INTERPRETER_PATH" value="/bin/bash" />
@@ -208,6 +192,9 @@
       <method v="2" />
     </configuration>
     <configuration name="Exercise1.html (2)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ComputerGraphics/Ex01/Exercise1.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="Exercise1.html (3)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ComputerGraphics/Ex02.1/Exercise1.html">
       <method v="2" />
     </configuration>
     <configuration name="Exercise1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webgl_start/Exercise1.html">
@@ -226,9 +213,11 @@
       <item itemvalue="JavaScript Debug.Exercise1.html" />
       <item itemvalue="JavaScript Debug.Exercise1.html (1)" />
       <item itemvalue="JavaScript Debug.Exercise1.html (2)" />
+      <item itemvalue="JavaScript Debug.Exercise1.html (3)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.Exercise1.html (3)" />
         <item itemvalue="JavaScript Debug.Exercise1.html (2)" />
         <item itemvalue="JavaScript Debug.Exercise1.html (1)" />
         <item itemvalue="JavaScript Debug.Exercise1.html" />
@@ -249,18 +238,21 @@
       <workItem from="1520253487625" duration="1777000" />
       <workItem from="1520608858917" duration="8000" />
       <workItem from="1537446891609" duration="40000" />
-      <workItem from="1538739753268" duration="2732000" />
+      <workItem from="1538739753268" duration="3922000" />
+      <workItem from="1538743707182" duration="1821000" />
+      <workItem from="1538746185923" duration="76000" />
+      <workItem from="1538747198315" duration="419000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5465000" />
+    <option name="totallyTimeSpent" value="8971000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-136" width="1936" height="1176" extended-state="6" />
+    <frame x="-7" y="0" width="867" height="927" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15911485" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32168674" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="MaxCompute Project Explorer" order="2" />
       <window_info id="DB Browser" order="3" />
@@ -278,7 +270,7 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Running Info" order="10" />
       <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32917467" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
       <window_info anchor="bottom" id="Running Result" order="14" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -293,6 +285,27 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Ex02.1/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ex01/VertexShader.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="31" lean-forward="true" selection-start-column="31" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ex01/FragmentShader.glsl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Ex01/gl-matrix.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -305,24 +318,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ex01/VertexShader.glsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="31" lean-forward="true" selection-start-column="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ex01/webgl-debug.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1411">
-          <caret line="4" column="67" lean-forward="true" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
+        <state relative-caret-position="68">
+          <caret line="4" column="67" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ex01/FragmentShader.glsl">
+    <entry file="file://$PROJECT_DIR$/Ex01/Exercise1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        <state relative-caret-position="1411">
+          <caret line="83" column="54" selection-start-line="83" selection-start-column="54" selection-end-line="83" selection-end-column="54" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -333,10 +342,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ex01/Exercise1.js">
+    <entry file="file://$PROJECT_DIR$/Ex02.1/FragmentShader.glsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="39" column="94" lean-forward="true" selection-start-line="39" selection-start-column="94" selection-end-line="39" selection-end-column="94" />
+        <state relative-caret-position="68">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ex02.1/VertexShader.glsl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ex02.1/Exercise1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="88" column="32" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
