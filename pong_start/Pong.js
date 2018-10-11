@@ -95,10 +95,29 @@ function draw() {
     mat3.fromScaling(projectMat, [2.0/gl.drawingBufferWidth, 2.0/gl.drawingBufferHeight]);
     gl.uniformMatrix3fv(ctx.uProjectionMatId, false, projectMat);
 
-    var modelMat = mat3.create();
-    mat3.fromScaling(modelMat, [100, 100]);
-    gl.uniformMatrix3fv(ctx.uModelMatId, false, modelMat);
+    //Draw rectangle no.1
+    var paddle1 = mat3.create();
+    mat3.fromTranslation(paddle1, [380, 50]);
+    mat3.scale(paddle1, paddle1, [10, 100]);
+    gl.uniformMatrix3fv(ctx.uModelMatId, false, paddle1);
+    gl.drawArrays(gl.TRIANGLE_FAN, 0, 4);
 
+    // draw rectangle no.2
+    var paddle2 = mat3.create();
+    mat3.fromTranslation(paddle2, [-380, -150]);
+    mat3.scale(paddle2, paddle2, [10, 100]);
+    gl.uniformMatrix3fv(ctx.uModelMatId, false, paddle2);
+    gl.drawArrays(gl.TRIANGLE_FAN, 0, 4);
+
+    var playline = mat3.create();
+    mat3.fromScaling(playline, [1, gl.drawingBufferHeight]);
+    gl.uniformMatrix3fv(ctx.uModelMatId, false, playline);
+    gl.drawArrays(gl.TRIANGLE_FAN, 0, 4);
+
+    var ball = mat3.create();
+    mat3.fromTranslation(ball, [280, 20]);
+    mat3.scale(ball, ball, [10, 10]);
+    gl.uniformMatrix3fv(ctx.uModelMatId, false, ball);
     gl.drawArrays(gl.TRIANGLE_FAN, 0, 4);
 }
 
