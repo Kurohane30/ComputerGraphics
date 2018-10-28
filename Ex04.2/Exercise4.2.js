@@ -17,9 +17,7 @@ var ctx = {
     uColorId: -1
 };
 
-var vertexBuffer;
-var edgeBuffer;
-
+var wiredCube;
 /**
  * Startup function to be called when the body is loaded
  */
@@ -40,8 +38,14 @@ function initGL() {
     setUpAttributesAndUniforms();
     setUpBuffers();
     gl.clearColor(1,0,0,1);
-    
+
     // add more necessary commands here
+}
+
+function setUpBuffers() {
+
+    wiredCube = new WireFrameCube(gl, [1.0, 1.0, 1.0, 0.5]);
+
 }
 
 /**
@@ -55,31 +59,6 @@ function setUpAttributesAndUniforms(){
 }
 
 /**
- * Setup the buffers to use. If more objects are needed this should be split in a file per object.
- */
-function setUpBuffers(){
-    "use strict";
-    // define vertices
-    var vertices =[
-        0,0,0,  // v0
-        1,0,0,  // v1
-        1,1,0   // v2
-    ];
-    vertexBuffer = gl.createBuffer();
-    gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
-
-    var vertexIndices = [
-        0,1,
-        1,2,
-        0,2
-    ];
-    edgeBuffer = gl.createBuffer();
-    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, edgeBuffer);
-    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(vertexIndices), gl.STATIC_DRAW);
-}
-
-/**
  * Draw the scene.
  */
 function draw() {
@@ -88,13 +67,5 @@ function draw() {
     gl.clear(gl.COLOR_BUFFER_BIT);
 
     // add drawing routines here
-    gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
-    gl.vertexAttribPointer(ctx.aVertexPositionId, 3, gl.FLOAT, false, 0, 0);
-    gl.enableVertexAttribArray(ctx.aVertexPositionId);
-    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, edgeBuffer);
-
-    // set uni-color
-    gl.uniform4f(ctx.uColorId, 0.0, 0.0, 0.0, 1.0);
-
-    gl.drawElements(gl.LINES, 6 /* Number of Indices */, gl.UNSIGNED_SHORT, 0);
+    wiredCube.draw(gl, ctx.aVertexPositionId, ctx.uColorID);
 }
