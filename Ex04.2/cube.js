@@ -12,11 +12,43 @@ function WireFrameCube(gl, color){
     function defineVertices(gl){
         // define the vertices of the cube
         var vertices = [
-            -0.5,0,0,
-            0.5,0,0,
-            0.5,0.5,0,
-            -0.5,0.5,0
+            // Top
+            -0.5, 0.5, 1.0,
+            0.5, 0.5, 1.0,
+            0.5, 0.5, -1.0,
+            -0.5, 0.5, -1.0,
+
+            // Left
+            -0.5, 0.5, 1.0,
+            -0.5, -0.5, 1.0,
+            -0.5, -0.5, -1.0,
+            -0.5, 0.5, -1.0,
+
+            // Right
+            0.5, 0.5, 1.0,
+            0.5, -0.5, 1.0,
+            0.5, -0.5, -1.0,
+            0.5, 0.5, -1.0,
+
+            // Front
+            -0.5,-0.5,-1.0,
+            0.5,-0.5,-1.0,
+            0.5,0.5,-1.0,
+            -0.5,0.5,-1.0,
+
+            // Back
+            -0.5,0.5,-1.0,
+            -0.5,-0.5,-1.0,
+            0.5,-0.5,-1.0,
+            0.5,0.5,-1.0,
+
+            // Bottom
+            -0.5, -0.5, 1.0,
+            0.5, -0.5, 1.0,
+            0.5, -0.5, -1.0,
+            -0.5, -0.5, -1.0
         ];
+
         var buffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
@@ -26,10 +58,41 @@ function WireFrameCube(gl, color){
     function defineEdges(gl){
         // define the edges for the cube, there are 12 edges in a cube
         var vertexIndices = [
+            // Top
             0,1,
             1,2,
             2,3,
-            0,3
+            0,3,
+
+            // Left
+            4,5,
+            5,6,
+            6,7,
+            4,7,
+
+            // Right
+            8,9,
+            9,10,
+            10,11,
+            8,11,
+
+            // Front
+            12,13,
+            13,14,
+            14,15,
+            12,15,
+
+            // Back
+            16,17,
+            17,18,
+            18,19,
+            16,19,
+
+            // Bottom
+            20,21,
+            21,22,
+            23,24,
+            20,24
         ];
         var buffer = gl.createBuffer();
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, buffer);
@@ -41,14 +104,30 @@ function WireFrameCube(gl, color){
         bufferVertices: defineVertices(gl),
         bufferEdges: defineEdges(gl),
         color: color,
-        draw: function(gl, aVertexPositionId, aVertexColorId){
+        draw: function(gl, aVertexPositionId, aVertexColorId, mWorldId, mViewId, mProjId){
             gl.vertexAttribPointer(aVertexPositionId, 3, gl.FLOAT, false, 0, 0);
             gl.enableVertexAttribArray(aVertexPositionId);
+
+            var worldMatrix = mat4.create();
+            var modelView = mat4.create();
+            var projectionMat = mat4.create();
+
+            gl.uniformMatrix4fv(mWorldId, false, worldMatrix);
+            gl.uniformMatrix4fv(mViewId, false, modelView);
+            gl.uniformMatrix4fv(mProjId, false, projectionMat);
+
+            mat4.identity(worldMatrix);
+            var fov = 0.7, distance = 4;
+            var scale = Math.tan(fov / 2) * distance;
+            //mat4.perspective(projectionMat, fov, 1, 0.1, 1000.0);
+            mat4.ortho(projectionMat, -scale, scale, -scale, scale, 0.1, 100);
+
+            mat4.lookAt(modelView, [0,0,-8],[0,0,0],[0,1,0]);
 
             // set uni-color
             gl.uniform4f(aVertexColorId, 0.0, 0.0, 0.0, 1.0);
 
-            gl.drawElements(gl.LINES, 8 /* Number of Indices */, gl.UNSIGNED_SHORT, 0);
+            gl.drawElements(gl.LINES, 24 /* Number of Indices */, gl.UNSIGNED_SHORT, 0);
 
         }
     }
