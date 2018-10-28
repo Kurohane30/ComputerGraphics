@@ -24,6 +24,16 @@ var rectangleObject = {
     buffer: -1
 };
 
+var lastTimeStamp= Date.now();
+
+var speed=1;
+
+// Start position of the different objects
+var ball_pos = [-280, -100];
+var paddle1_pos = [380, 50];
+var paddle2_pos = [-380, -150];
+
+
 
 /**
  * Startup function to be called when the body is loaded
@@ -35,7 +45,7 @@ function startup() {
     initGL();
     window.addEventListener('keyup', onKeyup, false);
     window.addEventListener('keydown', onKeydown, false);
-    draw();
+    drawAnimated(Date.now());
 }
 
 /**
@@ -97,29 +107,33 @@ function draw() {
 
     //Draw rectangle no.1
     var paddle1 = mat3.create();
-    mat3.fromTranslation(paddle1, [380, 50]);
+    mat3.fromTranslation(paddle1, paddle1_pos);
     mat3.scale(paddle1, paddle1, [10, 100]);
     gl.uniformMatrix3fv(ctx.uModelMatId, false, paddle1);
     gl.drawArrays(gl.TRIANGLE_FAN, 0, 4);
 
     // draw rectangle no.2
     var paddle2 = mat3.create();
-    mat3.fromTranslation(paddle2, [-380, -150]);
+    mat3.fromTranslation(paddle2, paddle2_pos);
     mat3.scale(paddle2, paddle2, [10, 100]);
     gl.uniformMatrix3fv(ctx.uModelMatId, false, paddle2);
     gl.drawArrays(gl.TRIANGLE_FAN, 0, 4);
 
+    // draw middleline
     var playline = mat3.create();
     mat3.fromScaling(playline, [1, gl.drawingBufferHeight]);
     gl.uniformMatrix3fv(ctx.uModelMatId, false, playline);
     gl.drawArrays(gl.TRIANGLE_FAN, 0, 4);
 
+    // draw ball
     var ball = mat3.create();
-    mat3.fromTranslation(ball, [280, 20]);
+    mat3.fromTranslation(ball, ball_pos);
     mat3.scale(ball, ball, [10, 10]);
     gl.uniformMatrix3fv(ctx.uModelMatId, false, ball);
     gl.drawArrays(gl.TRIANGLE_FAN, 0, 4);
 }
+
+
 
 // Key Handling
 var key = {
@@ -141,4 +155,19 @@ function onKeydown(event) {
 
 function onKeyup(event) {
     delete key._pressed[event.keyCode];
+}
+
+
+function drawAnimated(timeStamp){
+    //calculate time since last call
+    //move or change objects
+    lastTimeStamp = timeStamp-lastTimeStamp;
+    ball_pos[0] = ball_pos[0] + 1;
+    ball_pos[1] = ball_pos[1] + 0.3;
+
+
+    draw();
+
+    //request next frame
+    window.requestAnimationFrame(drawAnimated);
 }
