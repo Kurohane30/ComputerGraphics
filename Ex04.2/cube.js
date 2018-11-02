@@ -104,22 +104,10 @@ function WireFrameCube(gl, color){
         bufferVertices: defineVertices(gl),
         bufferEdges: defineEdges(gl),
         color: color,
-        draw: function(gl, aVertexPositionId, aVertexColorId, mWorldId, mViewId, mProjId){
+        draw: function(gl, aVertexPositionId, aVertexColorId){
             gl.vertexAttribPointer(aVertexPositionId, 3, gl.FLOAT, false, 0, 0);
             gl.enableVertexAttribArray(aVertexPositionId);
 
-            var worldMatrix = mat4.create();
-            var modelView = mat4.create();
-            var projectionMat = mat4.create();
-
-
-            mat4.identity(worldMatrix);
-            mat4.ortho(projectionMat, -2, 2, -2, 2, 0.1, 100);
-
-            mat4.lookAt(modelView, [2,4,-8],[0,0,0],[0,1,0]);
-            gl.uniformMatrix4fv(mWorldId, false, worldMatrix);
-            gl.uniformMatrix4fv(mViewId, false, modelView);
-            gl.uniformMatrix4fv(mProjId, false, projectionMat);
 
             // set uni-color
             gl.uniform4f(aVertexColorId, 0.0, 0.0, 0.0, 1.0);

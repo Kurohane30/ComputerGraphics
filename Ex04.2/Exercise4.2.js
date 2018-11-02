@@ -72,9 +72,22 @@ function draw() {
     console.log("Drawing");
     gl.clear(gl.COLOR_BUFFER_BIT);
 
+    var worldMatrix = mat4.create();
+    var modelView = mat4.create();
+    var projectionMat = mat4.create();
+
+
+    mat4.identity(worldMatrix);
+    mat4.ortho(projectionMat, -2, 2, -2, 2, 0.1, 100);
+
+    mat4.lookAt(modelView, [2,4,-8],[0,0,0],[0,1,0]);
+
+    gl.uniformMatrix4fv(ctx.mWorldId, false, worldMatrix);
+    gl.uniformMatrix4fv(ctx.mViewId, false, modelView);
+    gl.uniformMatrix4fv(ctx.mProjId, false, projectionMat);
 
     // add drawing routines here
-    wiredCube.draw(gl, ctx.aVertexPositionId, ctx.uColorID, ctx.mWorldId, ctx.mViewId, ctx.mProjId);
+    wiredCube.draw(gl, ctx.aVertexPositionId, ctx.uColorID);
 
 
 }
