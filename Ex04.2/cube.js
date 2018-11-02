@@ -31,10 +31,10 @@ function WireFrameCube(gl, color){
             0.5, 0.5, -1.0,
 
             // Front
-            -0.5,-0.5,-1.0,
-            0.5,-0.5,-1.0,
-            0.5,0.5,-1.0,
-            -0.5,0.5,-1.0,
+            -0.5,-0.5,1.0,
+            0.5,-0.5,1.0,
+            0.5,0.5,1.0,
+            -0.5,0.5,1.0,
 
             // Back
             -0.5,0.5,-1.0,
@@ -91,8 +91,8 @@ function WireFrameCube(gl, color){
             // Bottom
             20,21,
             21,22,
-            23,24,
-            20,24
+            22, 23,
+            20,23
         ];
         var buffer = gl.createBuffer();
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, buffer);
@@ -112,22 +112,19 @@ function WireFrameCube(gl, color){
             var modelView = mat4.create();
             var projectionMat = mat4.create();
 
+
+            mat4.identity(worldMatrix);
+            mat4.ortho(projectionMat, -2, 2, -2, 2, 0.1, 100);
+
+            mat4.lookAt(modelView, [2,4,-8],[0,0,0],[0,1,0]);
             gl.uniformMatrix4fv(mWorldId, false, worldMatrix);
             gl.uniformMatrix4fv(mViewId, false, modelView);
             gl.uniformMatrix4fv(mProjId, false, projectionMat);
 
-            mat4.identity(worldMatrix);
-            var fov = 0.7, distance = 4;
-            var scale = Math.tan(fov / 2) * distance;
-            //mat4.perspective(projectionMat, fov, 1, 0.1, 1000.0);
-            mat4.ortho(projectionMat, -scale, scale, -scale, scale, 0.1, 100);
-
-            mat4.lookAt(modelView, [0,0,-8],[0,0,0],[0,1,0]);
-
             // set uni-color
             gl.uniform4f(aVertexColorId, 0.0, 0.0, 0.0, 1.0);
 
-            gl.drawElements(gl.LINES, 24 /* Number of Indices */, gl.UNSIGNED_SHORT, 0);
+            gl.drawElements(gl.LINES, 48 /* Number of Indices */, gl.UNSIGNED_SHORT, 0);
 
         }
     }
