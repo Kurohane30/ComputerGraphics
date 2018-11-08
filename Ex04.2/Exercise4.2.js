@@ -25,7 +25,7 @@ var worldMatrix = mat4.create();
 var modelView = mat4.create();
 var projectionMat = mat4.create();
 var i = 1;
-var lastTimeStamp=Date.now();
+var lastTimeStamp=0;
 
 var wiredCube;
 /**
@@ -37,7 +37,7 @@ function startup() {
     gl = createGLContext(canvas);
     initGL();
     //draw();
-    drawAnimated();
+    drawAnimated(Date.now());
 }
 
 /**
@@ -75,14 +75,17 @@ function setUpAttributesAndUniforms(){
 /**
  * Draw the scene.
  */
-function draw(timeStamp) {
+function draw(speed) {
     "use strict";
     console.log("Drawing");
     gl.clear(gl.COLOR_BUFFER_BIT);
 
 
-    i++;
+    i+=speed;
     mat4.identity(worldMatrix);
+
+    mat4.lookAt(modelView, [-2,2,5],[0,0,0],[0,1,0]);
+
     //Orthogonal
     mat4.ortho(projectionMat, -2, 2, -2, 2, 0.1, 100);
 
@@ -91,31 +94,29 @@ function draw(timeStamp) {
 
     //perspective
     //mat4.perspective(projectionMat, 45, 2, 4, 100);
-
-    mat4.lookAt(modelView, [-2,2,5],[0,0,0],[0,1,0]);
-
-
-    lastTimeStamp = timeStamp-lastTimeStamp;
-    var speed = lastTimeStamp;
-    mat4.rotate(worldMatrix, worldMatrix, (0.05+i)*speed, [0,1,0]);
-
-
+    mat4.rotate(worldMatrix, worldMatrix, i, [0,1,0]);
 
     gl.uniformMatrix4fv(ctx.mWorldId, false, worldMatrix);
     gl.uniformMatrix4fv(ctx.mViewId, false, modelView);
     gl.uniformMatrix4fv(ctx.mProjId, false, projectionMat);
 
 
+
+
+
     // add drawing routines here
     wiredCube.draw(gl, ctx.aVertexPositionId, ctx.uColorID);
-
-    window.requestAnimationFrame(draw);
 }
 
-function drawAnimated(){
+function drawAnimated(timeStamp){
+
+    var time_since_last_iteration = timeStamp-lastTimeStamp;
+    var speed = time_since_last_iteration*0.0005;
+    lastTimeStamp = timeStamp;
 
 
-    draw(lastTimeStamp);
+    draw(speed);
 
+    window.requestAnimationFrame(drawAnimated);
     //request next frame
 }
