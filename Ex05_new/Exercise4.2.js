@@ -14,6 +14,7 @@ var gl;
 var ctx = {
     shaderProgram: -1,
     aVertexPositionId: -1,
+    aVertexColorId: -1,
     uColorId: -1,
     mWorldId: -1,
     mViewId: -1,
@@ -50,7 +51,7 @@ function initGL() {
 }
 
 function setUpBuffers() {
-    wiredCube = new WireFrameCube(gl, [1.0, 1.0, 1.0, 1.0]);
+    wiredCube = new WireFrameCube(gl);
 }
 
 /**
@@ -64,6 +65,7 @@ function setUpAttributesAndUniforms(){
     ctx.mWorldId = gl.getUniformLocation(ctx.shaderProgram, "mWorld");
     ctx.mViewId = gl.getUniformLocation(ctx.shaderProgram, "mView");
     ctx.mProjId = gl.getUniformLocation(ctx.shaderProgram, "mProj");
+    ctx.aVertexColorId = gl.getAttribLocation(ctx.shaderProgram, "aVertexColor");
 }
 
 /**
@@ -88,5 +90,5 @@ function draw() {
 
 
     // add drawing routines here
-    wiredCube.draw(gl, ctx.aVertexPositionId, ctx.uColorID);
+    wiredCube.draw(gl, ctx.aVertexPositionId, ctx.aVertexColorId);
 }
